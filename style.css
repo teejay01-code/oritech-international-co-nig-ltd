@@ -799,8 +799,11 @@ label:hover {
   .logo {
     font-size: 2rem;
   }
-  .slide {
-    height: 60vh;
+  .home .slide {
+    height: 85vh;
+  }
+  .home .slide .content {
+    padding-bottom: 2.5rem;
   }
   .heading {
     margin-bottom: 2rem;
@@ -833,6 +836,9 @@ label:hover {
   }
   .projects-container .card {
     height: auto;
+  }
+  .projects-container .card img {
+    height: 23rem;
   }
   #plus-sign {
     height: 38px;

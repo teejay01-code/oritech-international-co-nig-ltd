@@ -823,8 +823,13 @@ label{
     .logo{
         font-size: 2rem;
     }
-    .slide{
-        height: 60vh;
+    .home{
+        .slide{
+        height: 85vh;
+        .content{
+            padding-bottom: 2.5rem;
+        }
+            }
     }
     .heading{
         margin-bottom: 2rem;
@@ -860,6 +865,9 @@ label{
         padding: 0 25px;
         .card{
             height: auto;
+            img{
+                height: 23rem;
+            }
         }
     }
     #plus-sign{
