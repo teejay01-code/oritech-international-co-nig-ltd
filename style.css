@@ -268,7 +268,7 @@ label:hover {
   position: absolute;
   top: 0;
   left: 0;
-  height: 100vh;
+  height: 90vh;
   width: 100%;
 }
 .home .content {
@@ -796,6 +796,12 @@ label:hover {
   html {
     font-size: 50%;
   }
+  .logo {
+    font-size: 2rem;
+  }
+  .slide {
+    height: 60vh;
+  }
   .heading {
     margin-bottom: 2rem;
   }
@@ -805,22 +811,31 @@ label:hover {
   .box-container {
     grid-template-columns: 2fr 2fr;
   }
+  .box-container .box {
+    height: auto;
+  }
   .services .box-container {
     grid-template-columns: 1fr;
   }
-  .services .box {
-    margin: 0 4rem;
+  .services .box i {
+    height: auto;
   }
   .services .box h3 {
-    padding: 0 0;
+    padding-top: 1rem;
+  }
+  .services .box p {
+    padding-top: 1rem;
   }
   .projects-container {
     grid-template-columns: 1fr;
     margin-top: 30px;
     padding: 0 25px;
   }
+  .projects-container .card {
+    height: auto;
+  }
   #plus-sign {
-    height: 40px;
+    height: 38px;
   }
   .contact .row .map {
     height: 36rem;

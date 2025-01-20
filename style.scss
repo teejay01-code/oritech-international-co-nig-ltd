@@ -263,7 +263,7 @@ label{
             content: '';
             position: absolute;
             top: 0; left: 0;
-            height: 100vh;
+            height: 90vh;
             width: 100%;
             //background: linear-gradient(to right, rgba(), );//
     }
@@ -820,6 +820,12 @@ label{
     html{
         font-size: 50%;
     }
+    .logo{
+        font-size: 2rem;
+    }
+    .slide{
+        height: 60vh;
+    }
     .heading{
         margin-bottom: 2rem;
     }
@@ -828,24 +834,36 @@ label{
     }
     .box-container{
         grid-template-columns: 2fr 2fr;
+        .box{
+            height: auto;
+        }
     }
+    
 
     .services .box-container{
         grid-template-columns: 1fr;
     }
     .services .box{
-        margin: 0 4rem;
+        i{
+            height: auto;
+        }
         h3{
-            padding: 0 0;
+            padding-top: 1rem;
+        }
+        p{
+            padding-top: 1rem;
         }
     }
     .projects-container{
         grid-template-columns: 1fr;
         margin-top: 30px;
-        padding: 0 25px
+        padding: 0 25px;
+        .card{
+            height: auto;
+        }
     }
     #plus-sign{
-        height: 40px
+        height: 38px
     }
     .contact .row .map{
         height: 36rem
