@@ -134,9 +134,19 @@ var swiper = new Swiper(".logo-slider", {
   },
 });
 
-// Light Gallery
-    const lightGalleryContainer = document.querySelectorAll('#plus-sign');
 
-    lightGallery(lightGalleryContainer, {
-        selector: 'this', 
-    });
+//Scroll Effect
+let sections = document.querySelectorAll('section');
+
+window.onscroll = () => {
+  let top = window.scrollY;
+  let offset = sec.offsetTop;
+  let height = sec.offsetHeight;
+
+  if (top >= offset && top < offset + height) {
+    sec.classList.add('show-animate');
+  }
+  else {
+    sec.classList.remove('show-animate');
+  }
+}

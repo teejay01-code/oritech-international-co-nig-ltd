@@ -21,6 +21,7 @@
     transition: all .2s linear;
 }
 
+
 @mixin grid($val){
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
@@ -114,6 +115,21 @@ section{
         top: 50%;
         opacity: 0;
     };
+}
+
+@keyframes status{
+    0%{
+        opacity: 1;
+        pointer-events: all;
+    }
+    90%{
+        opacity: 1;
+        pointer-events: all;
+    }
+    100%{
+        opacity: 0;
+        pointer-events: none;
+    }
 }
 
 .header{
@@ -250,7 +266,7 @@ label{
 
 .home{
     padding: 0;
-
+    
     .slide{
         height: 90vh;
         display: flex;
@@ -258,6 +274,15 @@ label{
         position: relative;
         background-size: cover !important;
         background-position: center ;
+
+        &::before{
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            height: 90vh;
+            width: 100%;
+            //background: linear-gradient(to right, rgba(), );//
+    }
 
         &::before{
             content: '';
@@ -446,11 +471,10 @@ label{
     border-radius: 8px;
 }
 .card{
-    max-width: 400px;
+    width: 42rem;
     background-color: white;
     overflow: hidden;
     border-radius: 8px;
-    align-items: stretch;
     height: 40rem;
 }
 .card:hover img{
@@ -611,6 +635,24 @@ label{
                 resize: none;
             }
         }
+        #status{
+            width: 50%;
+            max-width: 500px;
+            text-align: center;
+            padding: 10px;
+            margin: 5px auto;
+            border-radius: 8px;
+            font-size: 1.4rem;
+            color: var(--white);
+        }
+        #status.success{
+            background-color: #7bc96f;
+            animation: status 4s ease forwards;
+        }
+        #status.error{
+            background-color: #d6514a;
+            animation: status 4s ease forwards;
+        }
     }
 }
 
@@ -640,7 +682,7 @@ label{
         }
         .blog{
         padding: 2.7rem 1rem;
-        
+        height: auto;
         background: var(--white);
         box-shadow: 0 5px 5px rgba(0,0,0,0.10);
         margin: 0 5px;
@@ -651,11 +693,11 @@ label{
             @include titleText(2rem);
         }
         h4{
-            @include graphText(1.6rem)
+            @include graphText(1.7rem)
         }
         p{
             padding: .6rem 0;
-            @include graphText(1.4rem)
+            @include graphText(1.5rem);
         }
         }
     }
@@ -752,13 +794,31 @@ label{
 
 //MEDIA QUERIES
 
-@media (max-width:1200px){
+@media (max-width:1400px){
     .header{
         padding: 1.5rem 2rem
     }
     section{
     padding: 3rem 5%;
-}
+    }
+    .projects-container{
+        grid-template-columns: repeat(3, 1fr);
+        padding: 0 25px;
+        .card{
+            height: auto;
+            width: auto;
+            img{
+                height: 26rem;
+            }
+        }
+    }
+    .reviews{
+        .slide{
+            p{
+                height: auto;
+            }
+        }
+    }
 
 }
 
@@ -791,8 +851,38 @@ label{
         }
     }
 }
+    .home .slide{
+    justify-content: flex-start;
+    }
 }
-
+html, body{
+    overflow-x: hidden;
+    width: 100%;
+}
+.services .box{
+        height: 45rem;
+        i{
+            height: auto;
+        }
+        h3{
+            padding-top: 1rem;
+        }
+        p{
+            padding-top: 1rem;
+        }
+    }
+    .projects-container{
+        grid-template-columns: 2fr 2fr;
+        margin-top: 30px;
+        padding: 0 25px;
+        .card{
+            height: auto;
+            width: auto;
+            img{
+                height: 26rem;
+            }
+        }
+    }
 @media (max-width:768px){
     .header{
         .search-form{
@@ -801,10 +891,10 @@ label{
     }
 
     .home .slide{
-    justify-content: center;
+    justify-content: flex-start;
     }
     .content{
-        text-align: center;
+        
 
     h3{
         font-size: 3rem;
@@ -813,6 +903,41 @@ label{
     .swiper-button-next,
     .swiper-button-prev{
         display: none;
+    }
+    .box-container{
+        .box{
+            height: auto;
+        }
+    }
+    .services .box-container{
+        grid-template-columns: 2fr 2fr;
+    }
+    .services .box{
+        height: 45rem;
+        i{
+            height: auto;
+        }
+        h3{
+            padding-top: 1rem;
+        }
+        p{
+            padding-top: 1rem;
+        }
+    }
+    .projects-container{
+        grid-template-columns: 2fr 2fr;
+        margin-top: 30px;
+        padding: 0 25px;
+        .card{
+            height: auto;
+            width: 38rem;
+            img{
+                height: 25rem;
+            }
+        }
+    }
+    .contact .row .map{
+        height: 38rem
     }
 }
 
@@ -826,6 +951,7 @@ label{
     .home{
         .slide{
         height: 85vh;
+        justify-content: flex-start;
         .content{
             padding-bottom: 2.5rem;
         }
@@ -866,7 +992,7 @@ label{
         .card{
             height: auto;
             img{
-                height: 23rem;
+                height: 25rem;
             }
         }
     }

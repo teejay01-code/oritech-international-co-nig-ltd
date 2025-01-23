@@ -84,6 +84,20 @@ section {
     opacity: 0;
   }
 }
+@keyframes status {
+  0% {
+    opacity: 1;
+    pointer-events: all;
+  }
+  90% {
+    opacity: 1;
+    pointer-events: all;
+  }
+  100% {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
 .header {
   position: sticky;
   top: 0;
@@ -262,6 +276,14 @@ label:hover {
   position: relative;
   background-size: cover !important;
   background-position: center;
+}
+.home .slide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 90vh;
+  width: 100%;
 }
 .home .slide::before {
   content: "";
@@ -458,11 +480,10 @@ label:hover {
 }
 
 .card {
-  max-width: 400px;
+  width: 42rem;
   background-color: white;
   overflow: hidden;
   border-radius: 8px;
-  align-items: stretch;
   height: 40rem;
 }
 
@@ -620,6 +641,24 @@ label:hover {
   height: 15rem;
   resize: none;
 }
+.contact .row #status {
+  width: 50%;
+  max-width: 500px;
+  text-align: center;
+  padding: 10px;
+  margin: 5px auto;
+  border-radius: 8px;
+  font-size: 1.4rem;
+  color: var(--white);
+}
+.contact .row #status.success {
+  background-color: #7bc96f;
+  animation: status 4s ease forwards;
+}
+.contact .row #status.error {
+  background-color: #d6514a;
+  animation: status 4s ease forwards;
+}
 
 .blogs {
   background: var(--light-bg);
@@ -650,6 +689,7 @@ label:hover {
 }
 .blogs .slide .blog {
   padding: 2.7rem 1rem;
+  height: auto;
   background: var(--white);
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
   margin: 0 5px;
@@ -663,13 +703,13 @@ label:hover {
   text-transform: capitalize;
 }
 .blogs .slide .blog h4 {
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   color: #4b4a4a;
   line-height: 2;
 }
 .blogs .slide .blog p {
   padding: 0.6rem 0;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   color: #4b4a4a;
   line-height: 2;
 }
@@ -736,12 +776,26 @@ label:hover {
   color: var(--yellow);
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
   .header {
     padding: 1.5rem 2rem;
   }
   section {
     padding: 3rem 5%;
+  }
+  .projects-container {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 25px;
+  }
+  .projects-container .card {
+    height: auto;
+    width: auto;
+  }
+  .projects-container .card img {
+    height: 26rem;
+  }
+  .reviews .slide p {
+    height: auto;
   }
 }
 @media (max-width: 991px) {
@@ -773,16 +827,47 @@ label:hover {
     display: block;
     margin: 2rem;
   }
+  .home .slide {
+    justify-content: flex-start;
+  }
 }
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.services .box {
+  height: 45rem;
+}
+.services .box i {
+  height: auto;
+}
+.services .box h3 {
+  padding-top: 1rem;
+}
+.services .box p {
+  padding-top: 1rem;
+}
+
+.projects-container {
+  grid-template-columns: 2fr 2fr;
+  margin-top: 30px;
+  padding: 0 25px;
+}
+.projects-container .card {
+  height: auto;
+  width: auto;
+}
+.projects-container .card img {
+  height: 26rem;
+}
+
 @media (max-width: 768px) {
   .header .search-form {
     width: 90%;
   }
   .home .slide {
-    justify-content: center;
-  }
-  .content {
-    text-align: center;
+    justify-content: flex-start;
   }
   .content h3 {
     font-size: 3rem;
@@ -790,6 +875,39 @@ label:hover {
   .swiper-button-next,
   .swiper-button-prev {
     display: none;
+  }
+  .box-container .box {
+    height: auto;
+  }
+  .services .box-container {
+    grid-template-columns: 2fr 2fr;
+  }
+  .services .box {
+    height: 45rem;
+  }
+  .services .box i {
+    height: auto;
+  }
+  .services .box h3 {
+    padding-top: 1rem;
+  }
+  .services .box p {
+    padding-top: 1rem;
+  }
+  .projects-container {
+    grid-template-columns: 2fr 2fr;
+    margin-top: 30px;
+    padding: 0 25px;
+  }
+  .projects-container .card {
+    height: auto;
+    width: 38rem;
+  }
+  .projects-container .card img {
+    height: 25rem;
+  }
+  .contact .row .map {
+    height: 38rem;
   }
 }
 @media (max-width: 600px) {
@@ -801,6 +919,7 @@ label:hover {
   }
   .home .slide {
     height: 85vh;
+    justify-content: flex-start;
   }
   .home .slide .content {
     padding-bottom: 2.5rem;
@@ -838,7 +957,7 @@ label:hover {
     height: auto;
   }
   .projects-container .card img {
-    height: 23rem;
+    height: 25rem;
   }
   #plus-sign {
     height: 38px;
