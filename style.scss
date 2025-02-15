@@ -750,7 +750,7 @@ label{
     }
 }
 
-.footer{
+/*.footer{
     text-align: center;
     .links .btn{
         margin: .5rem;
@@ -763,10 +763,127 @@ label{
             color: var(--yellow);
         }
     }
+}*/
+/*Footer Section*/
+footer{
+    width: 100%;
+    height: 100%;
+    padding: 50px 100px;
+    background: black;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
+footer .footer-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
 
-
+footer .footer-container .sec{
+    margin-right: 30px;
+    }
+footer .footer-container .sec.aboutus{
+    width: 40%;
+}
+footer  .footer-container h2{
+    position: relative;
+        color: #fff;
+        font-weight: 600;
+        font-size: 2rem;
+        margin-bottom: 15px;
+}
+footer .footer-container  h2:before {
+    
+    position: absolute;
+    content: '';
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: var(--yellow);
+}
+footer  p{
+    color: var(--white);
+    font-size: 1.3rem;
+}
+.sci{
+    margin-top: 20px;
+    display: flex;
+}
+.sci li{
+    list-style: none;
+}
+.sci li a{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+.sci li a:hover{
+    background: var(--yellow);
+}
+.sci li a .fab{
+    color: #fff;
+    font-size: 2rem;
+}
+.quickLinks{
+    position: relative;
+    width: 25%;
+}
+.quickLinks ul li{
+    list-style: none;
+}
+.quickLinks ul li a{
+    color: #fff;
+    font-size: 1.4rem;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+.quickLinks ul li a:hover{
+    color: var(--yellow);
+}
+.footercontact{
+    width: calc(35% - 60px);
+    margin-right: 0 !important;
+}
+.footercontact .info li{
+    display: flex;
+    margin-bottom: 16px;
+    font-size: 1.4rem;
+}
+.footercontact .info li span:nth-child(1){
+    color:#fff;
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+.footercontact .info li span{
+    color: #fff;
+}
+.footercontact .info li a{
+    color: #fff;
+    text-decoration: none;
+}
+.copyrightText{
+    width: 100%;
+    background: #181818;
+    padding: 8px 100px;
+    text-align: center;
+    color: #fff;
+    font-size: 1.5rem
+}
+.copyrightText .credit{
+    color: var(--yellow)
+}
 
 
 
@@ -823,6 +940,52 @@ label{
 }
 
 @media (max-width:991px){
+    footer{
+        padding: 40px;
+    }
+    .footer-container{
+        flex-direction: column;
+    }
+    .footer-container .sec{
+        margin-right: 0;
+        margin-bottom: 40px;
+    }
+    .footer-container .sec.aboutus,
+    .quickLinks,
+    .footercontact{
+        width: 100%;
+    }
+    .copyrightText{
+        padding: 8px 40px;
+    }
+    .projects-container{
+        grid-template-columns: 2fr 2fr;
+        margin-top: 30px;
+        padding: 0 25px;
+        .card{
+            height: auto;
+            width: auto;
+            img{
+                height: 26rem;
+            }
+        }
+    }
+    html, body{
+    overflow-x: hidden;
+    width: 100%;
+}
+.services .box{
+        height: 45rem;
+        i{
+            height: auto;
+        }
+        h3{
+            padding-top: 1rem;
+        }
+        p{
+            padding-top: 1rem;
+        }
+    }
     html{
         font-size: 55%;
     }
@@ -855,34 +1018,9 @@ label{
     justify-content: flex-start;
     }
 }
-html, body{
-    overflow-x: hidden;
-    width: 100%;
-}
-.services .box{
-        height: 45rem;
-        i{
-            height: auto;
-        }
-        h3{
-            padding-top: 1rem;
-        }
-        p{
-            padding-top: 1rem;
-        }
-    }
-    .projects-container{
-        grid-template-columns: 2fr 2fr;
-        margin-top: 30px;
-        padding: 0 25px;
-        .card{
-            height: auto;
-            width: auto;
-            img{
-                height: 26rem;
-            }
-        }
-    }
+
+    
+    
 @media (max-width:768px){
     .header{
         .search-form{
@@ -1003,6 +1141,7 @@ html, body{
         height: 36rem
     }
 }
+
 
 
 
