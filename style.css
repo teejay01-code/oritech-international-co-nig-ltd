@@ -803,7 +803,7 @@ footer .footer-container h2 {
   position: relative;
   color: #fff;
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin-bottom: 15px;
 }
 
@@ -819,7 +819,7 @@ footer .footer-container h2:before {
 
 footer p {
   color: var(--white);
-  font-size: 1.3rem;
+  font-size: 1.5rem;
 }
 
 .sci {
@@ -850,7 +850,7 @@ footer p {
 
 .sci li a .fab {
   color: #fff;
-  font-size: 2rem;
+  font-size: 2.3rem;
 }
 
 .quickLinks {
@@ -864,7 +864,7 @@ footer p {
 
 .quickLinks ul li a {
   color: #fff;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   text-decoration: none;
   margin-bottom: 10px;
   display: inline-block;
@@ -882,12 +882,12 @@ footer p {
 .footercontact .info li {
   display: flex;
   margin-bottom: 16px;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 }
 
 .footercontact .info li span:nth-child(1) {
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   margin-right: 10px;
 }
 
@@ -906,7 +906,7 @@ footer p {
   padding: 8px 100px;
   text-align: center;
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
 }
 
 .copyrightText .credit {
@@ -949,7 +949,7 @@ footer p {
   .footer-container .sec.aboutus,
   .quickLinks,
   .footercontact {
-    width: 100%;
+    width: 100% !important;
   }
   .copyrightText {
     padding: 8px 40px;
